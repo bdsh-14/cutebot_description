@@ -1,0 +1,15 @@
+# ROS 2
+build/
+install/
+log/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Misc
+.DS_Store
