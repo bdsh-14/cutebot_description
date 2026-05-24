@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<robot name="cutebot">
+
+  <!-- Base Body -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.45 0.35 0.18"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0.2 0.5 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- Head -->
+  <link name="head_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.13"/>
+      </geometry>
+      <material name="Hot_pink">
+        <color rgba="1.0 0.41 0.71 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="head_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="head_link"/>
+    <origin xyz="0.1 0 0.22" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Left Wheel -->
+  <link name="left_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.08"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel_link"/>
+    <origin xyz="0 0.22 0" rpy="1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Right Wheel -->
+  <link name="right_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.08"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel_link"/>
+    <origin xyz="0 -0.22 0" rpy="1.57 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Caster -->
+  <link name="caster_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.04"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_link"/>
+    <origin xyz="-0.18 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
